@@ -1,0 +1,231 @@
+/* src/carousel.css */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+.carousel-wrapper {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background-color: #fdfaf3;
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
+  color: #1a1a1a;
+}
+
+/* Background subtle blob */
+.carousel-bg-blob {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+  background-color: #fef08a;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.carousel-header {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 70px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Reversing the header content (Right becomes Left, Left becomes Right) */
+.carousel-title-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 25px;
+  font-size: 95px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.carousel-title-primary {
+  color: #1a1a1a;
+}
+
+.carousel-title-highlight {
+  color: #eab308;
+}
+
+.carousel-subtitle {
+  font-size: 48px;
+  font-weight: 500;
+  color: #333;
+}
+
+.carousel-center-section {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 680px;
+  z-index: 10;
+}
+
+.carousel-phone-mockup {
+  width: 100%;
+  height: 100%;
+  border: 18px solid #eab308;
+  border-radius: 65px;
+  overflow: hidden;
+  background-color: #eab308;
+  position: relative;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-phone-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.carousel-phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 35px;
+  background-color: #eab308;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/* Decorative elements around the phone */
+.carousel-deco-bag-1 {
+  position: absolute;
+  bottom: -30px;
+  right: -50px;
+  width: 140px;
+  height: 180px;
+  background-color: #eab308;
+  border-radius: 12px;
+  z-index: 15;
+  box-shadow: -8px 15px 25px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-deco-bag-2 {
+  position: absolute;
+  bottom: -50px;
+  right: 70px;
+  width: 120px;
+  height: 160px;
+  background-color: #22c55e;
+  border-radius: 12px;
+  z-index: 14;
+  box-shadow: -8px 15px 25px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-deco-tag {
+  position: absolute;
+  top: 120px;
+  left: -50px;
+  width: 90px;
+  height: 90px;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 12px;
+  transform: rotate(-15deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: bold;
+  z-index: 15;
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Data Points Styling */
+.carousel-data-item {
+  position: absolute;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 20;
+}
+
+.carousel-icon-box {
+  width: 100px;
+  height: 100px;
+  background-color: #eab308;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border: 4px dashed #1a1a1a;
+  box-shadow: 0 0 0 8px #fdfaf3 inset;
+  position: relative;
+}
+
+.carousel-icon-svg {
+  width: 45px;
+  height: 45px;
+  color: #1a1a1a;
+}
+
+.carousel-data-desc {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #1a1a1a;
+  background-color: rgba(253, 250, 243, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Predefined Positions for Data Points */
+.pos-top-right { top: 360px; right: 40px; }
+.pos-top-left { top: 360px; left: 40px; }
+.pos-bottom-right { bottom: 300px; right: 40px; }
+.pos-bottom-left { bottom: 300px; left: 40px; }
+.pos-bottom-center { bottom: 100px; left: 50%; transform: translateX(-50%); }
+
+/* Footer Styling */
+.carousel-footer {
+  position: absolute;
+  bottom: 50px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 10;
+}
+
+.carousel-source {
+  font-size: 24px;
+  font-weight: 500;
+  color: #666;
+}
+
+.carousel-brand {
+  font-size: 50px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.carousel-brand-highlight {
+  color: #ef4444;
+}
