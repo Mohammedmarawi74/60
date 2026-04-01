@@ -58,8 +58,21 @@ const positions = [
   { value: 'pos-bottom-center', label: 'أسفل المنتصف' },
 ];
 
+const themes = [
+  { id: 'default', name: 'افتراضي', class: '' },
+  { id: 'navy-l1', name: 'كحلي فاتح 1', class: 'theme-navy-light-1' },
+  { id: 'navy-l2', name: 'كحلي فاتح 2', class: 'theme-navy-light-2' },
+  { id: 'navy-d1', name: 'كحلي غامق 1', class: 'theme-navy-dark-1' },
+  { id: 'navy-d2', name: 'كحلي غامق 2', class: 'theme-navy-dark-2' },
+  { id: 'emerald', name: 'زمردي احترافي', class: 'theme-emerald-pro' },
+  { id: 'royal', name: 'بنفسجي ملكي', class: 'theme-royal-purple' },
+  { id: 'sunset', name: 'غروب عصري', class: 'theme-sunset-warm' },
+  { id: 'slate', name: 'رمادي بسيط', class: 'theme-slate-mono' },
+];
+
 export default function App() {
   const [state, setState] = useState<CanvasState>(defaultState);
+  const [currentTheme, setCurrentTheme] = useState(themes[0]);
   const [scale, setScale] = useState(0.5);
   const canvasRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -146,6 +159,29 @@ export default function App() {
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-8">
+          {/* Theme Section */}
+          <section className="space-y-4">
+            <h2 className="text-lg font-semibold text-gray-700 border-b pb-2 flex items-center gap-2">
+              <Icons.Palette className="w-5 h-5 text-gray-500" />
+              اختيار الثيم
+            </h2>
+            <div className="grid grid-cols-3 gap-2">
+              {themes.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setCurrentTheme(t)}
+                  className={`text-xs p-2 rounded-md border transition-all ${
+                    currentTheme.id === t.id
+                      ? 'border-yellow-500 bg-yellow-50 text-yellow-700 font-bold shadow-sm'
+                      : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                  }`}
+                >
+                  {t.name}
+                </button>
+              ))}
+            </div>
+          </section>
+
           {/* Header Section */}
           <section className="space-y-4">
             <h2 className="text-lg font-semibold text-gray-700 border-b pb-2 flex items-center gap-2">
@@ -325,7 +361,7 @@ export default function App() {
           className="shadow-2xl bg-white"
         >
           {/* The actual canvas to be exported */}
-          <div ref={canvasRef} className="carousel-wrapper">
+          <div ref={canvasRef} className={`carousel-wrapper ${currentTheme.class}`}>
             <div className="carousel-bg-blob"></div>
             
             <div className="carousel-header">
@@ -369,10 +405,12 @@ export default function App() {
               </div>
             ))}
 
-            <div className="carousel-footer">
-              <div className="carousel-source">{state.sourceText}</div>
-              <div className="carousel-brand">
-                {state.logoText1}<span className="carousel-brand-highlight">{state.logoText2}</span>
+            <div className="carousel-footer-modern">
+              <div className="carousel-footer-right">
+                منصة المستثمر الاقتصادية
+              </div>
+              <div className="carousel-footer-left">
+                al-investor.com
               </div>
             </div>
           </div>

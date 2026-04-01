@@ -1,12 +1,115 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
 
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 :root {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
+  --text-primary: #1a1a1a;
+  --bg-primary: #fdfaf3;
+  --bg-primary-transparent: rgba(253, 250, 243, 0.8);
+  --bg-accent: #fef08a;
+  --text-secondary: #333;
+  --accent-primary: #eab308;
+  --accent-secondary: #22c55e;
+}
+
+/* Theme 1: Navy Light 1 (Corporate) */
+.theme-navy-light-1 {
+  --bg-primary: #f8fafc;
+  --bg-primary-transparent: rgba(248, 250, 252, 0.8);
+  --bg-accent: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --accent-primary: #1e293b;
+  --accent-secondary: #64748b;
+}
+
+/* Theme 2: Navy Light 2 (Modern Blue) */
+.theme-navy-light-2 {
+  --bg-primary: #f1f5f9;
+  --bg-primary-transparent: rgba(241, 245, 249, 0.8);
+  --bg-accent: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-primary: #0284c7;
+  --accent-secondary: #38bdf8;
+}
+
+/* Theme 3: Navy Dark 1 (Deep Midnight) */
+.theme-navy-dark-1 {
+  --bg-primary: #020617;
+  --bg-primary-transparent: rgba(2, 6, 23, 0.8);
+  --bg-accent: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --accent-primary: #38bdf8;
+  --accent-secondary: #0ea5e9;
+}
+
+/* Theme 4: Navy Dark 2 (Gold & Navy) */
+.theme-navy-dark-2 {
+  --bg-primary: #0f172a;
+  --bg-primary-transparent: rgba(15, 23, 42, 0.8);
+  --bg-accent: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-primary: #eab308;
+  --accent-secondary: #fbbf24;
+}
+
+/* Theme 5: Emerald Pro (Clean Green) */
+.theme-emerald-pro {
+  --bg-primary: #f0fdf4;
+  --bg-primary-transparent: rgba(240, 253, 244, 0.8);
+  --bg-accent: #dcfce7;
+  --text-primary: #064e3b;
+  --text-secondary: #065f46;
+  --accent-primary: #10b981;
+  --accent-secondary: #34d399;
+}
+
+/* Theme 6: Royal Purple (Premium) */
+.theme-royal-purple {
+  --bg-primary: #faf5ff;
+  --bg-primary-transparent: rgba(250, 245, 255, 0.8);
+  --bg-accent: #f3e8ff;
+  --text-primary: #581c87;
+  --text-secondary: #6b21a8;
+  --accent-primary: #a855f7;
+  --accent-secondary: #c084fc;
+}
+
+/* Theme 7: Sunset Warm (Modern Orange) */
+.theme-sunset-warm {
+  --bg-primary: #fff7ed;
+  --bg-primary-transparent: rgba(255, 247, 237, 0.8);
+  --bg-accent: #ffedd5;
+  --text-primary: #7c2d12;
+  --text-secondary: #9a3412;
+  --accent-primary: #f97316;
+  --accent-secondary: #fb923c;
+}
+
+/* Theme 8: Slate Mono (Minimalist) */
+.theme-slate-mono {
+  --bg-primary: #f9fafb;
+  --bg-primary-transparent: rgba(249, 250, 251, 0.8);
+  --bg-accent: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --accent-primary: #4b5563;
+  --accent-secondary: #9ca3af;
 }
 
 body {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+* {
+  font-family: 'IBM Plex Sans Arabic', sans-serif !important;
 }
 
 .dot-pattern {
